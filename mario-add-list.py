@@ -4,7 +4,7 @@
 # This function adds a new task to the list
 def add_task(args):
     tasks = load_tasks()  # load existing tasks
-
+# This builds a new task using the data passed from the command line
     # Each task is stored as a dictionary
     task = {
         'title': args.title,
@@ -22,24 +22,15 @@ def add_task(args):
 def list_tasks(args):
     tasks = load_tasks()  # get the list of tasks
 
-    # Loop through each task and display it
+    # Go through each saved task and print it out in a readable way
     for i, task in enumerate(tasks):
         if task['done']:
             status = "DONE"
         else:
             status = "NOT DONE"
 
-        print(f"{i + 1}. [{status}] {task['title']} - Due: {task['due']} - Priority: {task['priority']}")
+        print("Task", i + 1, ":", task["title"])
+        print("   Status:", status)
+        print("   Due:", task["due"])
+        print("   Priority:", task["priority"])
 
-
-# Only run this test if this file is executed directly
-if __name__ == "__main__":
-    import argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument("title")
-    parser.add_argument("--due", required=True)
-    parser.add_argument("--priority", default="low")
-    args = parser.parse_args()
-    
-    add_task(args)
-    list_tasks(args)
