@@ -3,13 +3,13 @@
 
 # This function adds a new task to the list
 def add_task(args):
-    tasks = load_tasks()  # load existing tasks
+    tasks = load_tasks()  # load existing tasks - This is from Aisha's Function
 # This builds a new task using the data passed from the command line
     # Each task is stored as a dictionary
     task = {
-        'title': args.title,
-        'due': args.due,
-        'priority': args.priority,
+        'title': args.title, # This adds the title (Mandatory)
+        'due': args.due, # This adds the due date (Mandatory)
+        'priority': args.priority, # This adds the Priority level, low, medium, high (Optional, default is low)
         'done': False  # the task starts as not done
     }
 
