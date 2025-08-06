@@ -1,0 +1,9 @@
+# Add courses
+python gpa_tracker.py --add Math 85
+python gpa_tracker.py --add History 72
+
+# Calculate GPA
+python gpa_tracker.py --gpa
+
+# Show passed courses
+python gpa_tracker.py --passed
